@@ -1,15 +1,15 @@
 package exercicios.bank.entities;
 
 public class BankAccount {
-    private final int accountNumber;
+    private int accountNumber;
     private String accountHolder;
     private  double balance;
     private static  final  double TAX_WITHDRAW = 5.00;
 
-    public BankAccount(int accountNumber, String accountHolder, double balance) {
+    public BankAccount(int accountNumber, String accountHolder, double initialDeposit) {
         this.accountNumber = accountNumber;
         this.accountHolder = accountHolder;
-        this.balance = balance;
+        deposit(initialDeposit);
     }
 
     public BankAccount(int accountNumber, String accountHolder) {
@@ -18,6 +18,7 @@ public class BankAccount {
     }
 
     public void deposit(double valueDeposit){
+
         balance +=valueDeposit;
     }
     public void withdraw(double valueWithdraw){
